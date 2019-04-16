@@ -17,7 +17,7 @@ public class StringUtils {
         // get power-set of range
 
         // for every set in power-set
-            // uppercase indices of string using set
+        // uppercase indices of string using set
         return null;
     }
 
@@ -27,6 +27,7 @@ public class StringUtils {
      * @return near-identical string whose characters at specified indices are capitalized
      */
     public static String upperCaseIndices(String string, Integer... indices) {
+
         return null;
     }
 
@@ -37,7 +38,14 @@ public class StringUtils {
      * @return near-identical string with `valueToBeInserted` inserted at `index`
      */
     public static String insertAtIndex(String stringToBeManipulated, String valueToBeInserted, Integer index) {
-        return null;
+        String newString = new String();
+        for (int i = 0; i < stringToBeManipulated.length(); i++) {
+            newString += stringToBeManipulated.charAt(i);
+            if (i == index - 1) {
+                newString += valueToBeInserted;
+            }
+        }
+        return newString;
     }
 
     /**
@@ -47,6 +55,8 @@ public class StringUtils {
      * @return near-identical string with character at `index` replaced with `replacementValue`
      */
     public static String replaceAtIndex(String stringToBeManipulated, Character replacementValue, Integer index) {
-        return null;
+        StringBuffer sbuf = new StringBuffer(stringToBeManipulated);
+        sbuf.setCharAt(index, replacementValue);
+        return sbuf.toString();
     }
 }
