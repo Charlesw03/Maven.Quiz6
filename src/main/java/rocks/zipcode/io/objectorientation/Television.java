@@ -4,20 +4,20 @@ package rocks.zipcode.io.objectorientation;
 public class Television {
 
     private boolean power = false;
-    private Integer channel;
+    private TVChannel channel;
 
     public void turnOn() {
-        while(!power){
-            turnOn();
-        }
+       power = true;
     }
 
     public void setChannel(Integer channel) {
-
-        this.channel = channel;
+        if(!power){
+            throw new IllegalStateException();
+        }
+        this.channel = TVChannel.getByOrdinal(channel);
     }
 
     public TVChannel getChannel() {
-        return getChannel();
+        return this.channel;
     }
 }
